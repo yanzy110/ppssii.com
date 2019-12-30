@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[]]></item>
+	<item id="Time"><![CDATA[2019-10-12 20:46]]></item>
+	<item id="From"><![CDATA[ ()]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[0]]></item>
+			<item id="adminid"><![CDATA[0]]></item>
+			<item id="name"><![CDATA[todo定制版本]]></item>
+			<item id="identifier"><![CDATA[xiaomy_cus_todo]]></item>
+			<item id="description"><![CDATA[]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[xiaomy_cus_todo/]]></item>
+			<item id="copyright"><![CDATA[窝窝开发者]]></item>
+			<item id="modules"><![CDATA[a:0:{}]]></item>
+			<item id="version"><![CDATA[1.0.0]]></item>
+		</item>
+		<item id="version"><![CDATA[X3.4,X3.3,X3.2]]></item>
+		<item id="language">
+			<item id="templatelang">
+				<item id="success"><![CDATA[操作成功]]></item>
+				<item id="fail"><![CDATA[操作失败]]></item>
+			</item>
+		</item>
+		<item id="installfile"><![CDATA[install.php]]></item>
+		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
+	</item>
+</root>
