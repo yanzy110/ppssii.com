@@ -363,10 +363,10 @@ class register_ctl {
 		if($_G['uid']) {
 			$ucsynlogin = $this->setting['allowsynlogin'] ? uc_user_synlogin($_G['uid']) : '';
 			//$url_forward = dreferer();
-			$url_forward = 'home/index.html';
+			$url_forward = 'ihome.php';
 			if(strpos($url_forward, $this->setting['regname']) !== false) {
 				//$url_forward = 'forum.php';
-				$url_forward = 'home/index.html';
+				$url_forward = 'ihome.php';
 			}
 			showmessage('login_succeed', $url_forward ? $url_forward : './', array('username' => $_G['member']['username'], 'usergroup' => $_G['group']['grouptitle'], 'uid' => $_G['uid']), array('extrajs' => $ucsynlogin));
 		} elseif(!$this->setting['regclosed'] && (!$this->setting['regstatus'] || !$this->setting['ucactivation'])) {
@@ -888,7 +888,7 @@ class register_ctl {
 			dsetcookie('invite_auth', '');
 
 			//$url_forward = dreferer();
-			$url_forward = 'home/index.html';
+			$url_forward = 'ihome.php';
 			$refreshtime = 3000;
 			switch($this->setting['regverify']) {
 				case 1:
@@ -921,7 +921,7 @@ class register_ctl {
 			$param = array('bbname' => $this->setting['bbname'], 'username' => $_G['username'], 'usergroup' => $_G['group']['grouptitle'], 'uid' => $_G['uid']);
 			if(strpos($url_forward, $this->setting['regname']) !== false || strpos($url_forward, 'buyinvitecode') !== false) {
 				//$url_forward = 'forum.php';
-				$url_forward = 'home/index.html';
+				$url_forward = 'ihome.php';
 			}
 			$href = str_replace("'", "\'", $url_forward);
 			$extra = array(
