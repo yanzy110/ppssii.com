@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>树拖拽人性化操作</title>
+	<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+	<link rel="stylesheet" type="text/css" href="template/default/ihome/css/index.css?v=1.0.2">
+	<link rel="stylesheet" href="template/default/ihome/css/demo.css" type="text/css">
+	<link rel="stylesheet" href="template/default/ihome/css/zTreeStyle/zTreeStyle.css?v=1.0.1" type="text/css">	
+	<style type="text/css">
+		.g-body-tree.ztree li span.button.ico_docu{
+			margin-right: 2px;
+		    background-position: -110px -16px;
+		    vertical-align: middle;
+		    *vertical-align: middle;
+		}
+	</style>
+</head>
+<body>
+	<div class="g-container-box">
+		<!-- 左侧盒子 -->
+		<div class="g-left-box">
+			<!-- 操作按钮 -->
+			<ul class="g-tool-box">
+				<style type="text/css">
+					.btn{
+						border:1px solid #999;
+						background:white;
+						text-align:center;
+						font-size:14px;
+						font-weight:bolder;
+						border-radius:5px;
+						width:90px;
+						margin:5px auto;
+						line-height:25px;
+						height:25px;
+						float: left;
+						margin-left: 20px;
+					}
+					#addlog a{
+						color: black;
+					}
+				</style>
+				<div id='addlog'>{if !$_G[uid]}<a href="member.php?mod=register"><div class="btn">注册</div></a><a href="member.php?mod=logging&action=login"><div class="btn">登录</div></a>{else}您好，{$_G[username]}，欢迎回来！<a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">点击退出</a>{/if}</div>
+				<div style="clear: both;"></div>
+				<label><input type="radio" name="menu" value="1">添加菜单</label><br/>
+	            <label><input type="radio" name="menu" checked="true" value="2">添加内容</label>
+			</ul>
+			 
+			<div id="bodyTree" class="g-body-tree ztree"></div>
+			 
+			<div id="rubbishTree" class="g-rubbish-tree ztree"></div>
+		</div>
+		<!-- 右侧盒子 -->
+		<div class="g-right-box">
+			 
+			<div id="childTree" class="g-child-tree ztree"></div>
+			<div class="g-input-box">
+				<input id="txtNodeName" type="text" class="txt-input"/><button class="btn-add">添加内容</button>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="template/default/ihome/js/jquery-1.4.4.min.js"></script>
+	<!-- <script type="text/javascript" src="https://cdn.bootcss.com/layer/2.2/layer.js"></script> -->
+	<script type="text/javascript" src="template/default/ihome/js/jquery.ztree.all.min.js"></script>
+	<script type="text/javascript" src="template/default/ihome/js/base.js"></script>
+	<script type="text/javascript" src="template/default/ihome/js/index.js?v=1.1.0"></script>
+</body>
+</html>
