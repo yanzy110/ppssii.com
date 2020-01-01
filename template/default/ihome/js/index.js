@@ -2,8 +2,8 @@
 var setting = {
     edit: {
         enable: true,
-        showRemoveBtn: true,
-        showRenameBtn: true
+         showRemoveBtn: showRemoveBtn,
+        showRenameBtn: showRenameBtn
     },
     data: {
         simpleData: {
@@ -20,6 +20,15 @@ var setting = {
 };
 
 var _fromTreeId,_toTreeId;
+
+
+function showRemoveBtn(treeId,treeNode){
+    return treeNode.id != "root";
+}
+function showRenameBtn(treeId,treeNode){
+    return treeNode.id != "root";
+}
+
 
 function beforeDrag(treeId, treeNodes) {
     // 拖出	
@@ -151,8 +160,16 @@ var Tree = {
         }, function(json) {
             if (json.code == 200) {
                 var _zNodes = [];
-                (json.data || []).forEach(function(item) {
+		    
+                _data = json.data || [];
+                // 加入一个虚拟的节点
+                _data = [{name:"我的电脑",id:"root"}].concat(_data);
+
+                _data.forEach(function(item) {
                     _zNodes.push({
+			    
+			    
+			    
                         name: item.name,
                         id: item.id,
                         pId: item.pid
@@ -194,11 +211,12 @@ var Tree = {
             };
 
             // 判断是否有选中的节点
-            var _selectNodes =  Tree._bodyTree.getSelectedNodes();
-            if(_selectNodes.length > 0){
+           var _selectNodes =  Tree._bodyTree.getSelectedNodes();            
+            if(_selectNodes.length > 0 && _selectNodes[0].id != "root"){
                 // 传递父节点
                 _node.pid = _selectNodes[0].id;
             }
+
 
             // 添加菜单
             Tree.addMenu(_node);
