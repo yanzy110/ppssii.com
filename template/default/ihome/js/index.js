@@ -163,7 +163,7 @@ var Tree = {
 		    
                 _data = json.data || [];
                 // 加入一个虚拟的节点
-                _data = [{name:"我的电脑",id:"root"}].concat(_data);
+                _data = [{name:"my computer",id:"root"}].concat(_data);
 
                 _data.forEach(function(item) {
                     _zNodes.push({
