@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>树拖拽人性化操作</title>
+	<title>ppssii</title>
 	<meta http-equiv="Access-Control-Allow-Origin" content="*" />
 	<link rel="stylesheet" type="text/css" href="template/default/ihome/css/index.css?v=1.0.2">
 	<link rel="stylesheet" href="template/default/ihome/css/demo.css" type="text/css">
@@ -41,10 +41,10 @@
 						color: black;
 					}
 				</style>
-				<div id='addlog'>{if !$_G[uid]}<a href="member.php?mod=register"><div class="btn">注册</div></a><a href="member.php?mod=logging&action=login"><div class="btn">登录</div></a>{else}您好，{$_G[username]}，欢迎回来！<a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">点击退出</a>{/if}</div>
+				<div id='addlog'>{if !$_G[uid]}<a href="member.php?mod=register"><div class="btn">register</div></a><a href="member.php?mod=logging&action=login"><div class="btn">log in </div></a>{else}Hello，{$_G[username]}<a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">log out</a>{/if}</div>
 				<div style="clear: both;"></div>
-				<label><input type="radio" name="menu" value="1">添加菜单</label><br/>
-	            <label><input type="radio" name="menu" checked="true" value="2">添加内容</label>
+				<label><input type="radio" name="menu" value="1">add folder</label><br/>
+	            <label><input type="radio" name="menu" checked="true" value="2">add note</label>
 			</ul>
 			 
 			<div id="bodyTree" class="g-body-tree ztree"></div>
@@ -56,7 +56,7 @@
 			 
 			<div id="childTree" class="g-child-tree ztree"></div>
 			<div class="g-input-box">
-				<input id="txtNodeName" type="text" class="txt-input"/><button class="btn-add">添加内容</button>
+				<input id="txtNodeName" type="text" class="txt-input"/><button class="btn-add">add note</button>
 			</div>
 		</div>
 	</div>
