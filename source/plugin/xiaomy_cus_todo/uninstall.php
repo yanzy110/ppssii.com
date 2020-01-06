@@ -10,9 +10,9 @@ if(!defined('IN_DISCUZ')) {
 }
 
 $sql = <<<EOF
-DROP TABLE IF EXISTS pre_xiaomy_cus_todo_menu`;
-DROP TABLE IF EXISTS pre_xiaomy_cus_todo_item`;
-DROP TABLE IF EXISTS pre_xiaomy_cus_todo_image`;
+DROP TABLE IF EXISTS `pre_xiaomy_cus_todo_menu`;
+DROP TABLE IF EXISTS `pre_xiaomy_cus_todo_item`;
+DROP TABLE IF EXISTS `pre_xiaomy_cus_todo_image`;
 
 EOF;
 

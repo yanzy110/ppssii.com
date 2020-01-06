@@ -5,6 +5,8 @@ if(!defined('IN_DISCUZ')) {
 }
 
 $param = getParam(['uid', 'pid', 'name', 'orderid']);
+$param['uid']=C::t('#xiaomy_cus_todo#jnpar_add')->getuid();
+$param['name']=$param['name']?$param['name']:'游客';
 if ($param === false) {
 	$Todo->code = 503;
 	$Todo->msg 	= 'system error';
