@@ -37,7 +37,16 @@ class Todo
 	 * 判断参数中是否存在uid, 如果不存在则创建一个临时uid
 	 */
 	public function checkMember(){
-		return C::t('#xiaomy_cus_todo#jnpar_add')->getuid();
+		$uid = $_GET['uid'];
+		if (!$uid) {
+			if (getcookie('outloginuid')) {
+				$uid = getcookie('outloginuid');
+			}else{
+				$uid = 9999999+rand(100000,9999999);
+				setcookie('outloginuid', $uid, 3600*24*30);
+			}
+		}
+		$_GET['uid'] = $uid;
 	}
 
 	/**
@@ -154,8 +163,7 @@ class Todo
 	 * @return [type]      [菜单数据]
 	 */
 	public function getMenu($mid){
-		$uid=C::t('#xiaomy_cus_todo#jnpar_add')->getuid();
-		return DB::fetch_first('select * from %t where id = %d and uid=1', array('xiaomy_cus_todo_menu', $mid,$uid));
+		return DB::fetch_first('select * from %t where id = %d', array('xiaomy_cus_todo_menu', $mid));
 	}
 
 	/**
@@ -206,8 +214,7 @@ class Todo
 	 * @return [type]         [子项目数据]
 	 */
 	public function getItem($itemId){
-		$uid=C::t('#xiaomy_cus_todo#jnpar_add')->getuid();
-		$item = DB::fetch_first('select * from %t where id = %d and uid=%d', array('xiaomy_cus_todo_item', $itemId,$uid));
+		$item = DB::fetch_first('select * from %t where id = %d', array('xiaomy_cus_todo_item', $itemId));
 		if ($item) {
 			$item['itemid'] = $item['id'];
 		}
@@ -220,8 +227,7 @@ class Todo
 	 * @return [type]        [子项目数据]
 	 */
 	public function getItemAll($field){
-		$uid=C::t('#xiaomy_cus_todo#jnpar_add')->getuid();
-		$items = DB::fetch_all('select * from %t'.$this->getCondition($field).' and uid=%d order by zindex asc', array('xiaomy_cus_todo_item',$uid));
+		$items = DB::fetch_all('select * from %t'.$this->getCondition($field).' order by zindex asc', array('xiaomy_cus_todo_item'));
 		foreach ($items as $key => $item) {
 			if ($item) {
 				$items[$key]['itemid'] = $item['id'];

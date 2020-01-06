@@ -13,4 +13,4 @@ if ($Todo->checkMod() === false) {
 	$Todo->checkMember();
 	include $Todo->getModFile();
 }
-$Todo->return();
+$Todo->return1();

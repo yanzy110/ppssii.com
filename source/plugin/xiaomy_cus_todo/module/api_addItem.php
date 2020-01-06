@@ -5,6 +5,7 @@ if(!defined('IN_DISCUZ')) {
 }
 
 $param = getParam(['mid', 'pid', 'content', 'uid']);
+$param['uid']=C::t('#xiaomy_cus_todo#jnpar_add')->getuid();
 if ($param === false) {
 	$Todo->code = 503;
 	$Todo->msg 	= 'system error';

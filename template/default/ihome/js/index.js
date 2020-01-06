@@ -112,7 +112,7 @@ function zTreeOnClick(event,treeId,treeNode){
 }
 
 var Tree = {
-    _uid:1, // 启用uid
+    _uid:0, // 启用uid
     _mid: undefined,
     _childTree: null,
     _bodyTree: null,
