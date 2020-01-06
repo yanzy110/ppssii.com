@@ -41,7 +41,7 @@
 						color: black;
 					}
 				</style>
-				<div id='addlog'>{if !$_G[uid]}<a href="member.php?mod=register"><div class="btn">register</div></a><a href="member.php?mod=logging&action=login"><div class="btn">log in </div></a>{else}Hello，{$_G[username]}<a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">log out</a>{/if}</div>
+				<div id='addlog'>{if !$_G[uid]}<a href="member.php?mod=register"><div class="btn">register</div></a><a href="member.php?mod=logging&action=login"><div class="btn">log in </div></a>{else}{$_G[username]} "  " <a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">log out</a>{/if}</div>
 				<div style="clear: both;"></div>
 				<label><input type="radio" name="menu" value="1">add folder</label><br/>
 	            <label><input type="radio" name="menu" checked="true" value="2">add note</label>
