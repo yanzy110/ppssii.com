@@ -126,7 +126,7 @@ $lang = array (
   'collection_invite' => '邀请参与',
   'collection_max_invite' => '每个淘专辑最多可以邀请 <span id="invitenum">$maxteamworkers</span> 人维护',
   'collection_selectfriend' => '选择好友',
-  'collection_username' => '用户名:',
+  'collection_username' => 'username:',
   'invite' => '邀请',
   'collection_commentnum' => '评论',
   'collection_createtime' => '创建',
