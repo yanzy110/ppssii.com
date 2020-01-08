@@ -133,9 +133,9 @@ var Tree = {
         $("input[name='menu']").click(function(){
             if(this.value == 1){
                 // 目录
-                $(".btn-add").text("添加菜单");
+                $(".btn-add").text("add folder");
             }else{
-                $(".btn-add").text("添加内容");
+                $(".btn-add").text("add note");
             }
         });    
     },
