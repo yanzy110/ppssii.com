@@ -15,7 +15,7 @@ $lang = array
 (
 	'login_title' => '登录管理中心',
 	'login_username' => '用户名',
-	'login_password' => '密　码',
+	'login_password' => 'password',
 
 	'submit' => '提交',
 	'forcesecques' => '必填项',
