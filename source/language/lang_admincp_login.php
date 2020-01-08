@@ -14,10 +14,10 @@ if(!defined('IN_DISCUZ')) {
 $lang = array
 (
 	'login_title' => '登录管理中心',
-	'login_username' => '用户名',
+	'login_username' => 'username',
 	'login_password' => 'password',
 
-	'submit' => '提交',
+	'submit' => 'submit',
 	'forcesecques' => '必填项',
 	'security_question' => '提　问',
 	'security_answer' => '回　答',
