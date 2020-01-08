@@ -19,9 +19,9 @@ $languages = array(
 	'menu' => '菜单',
 
 	'founder'=>'UCenter创始人',
-	'login_username'=>'用户名',
-	'login_password'=>'密　码',
-	'login_submit'=>'登 录',
+	'login_username'=>'username',
+	'login_password'=>'password',
+	'login_submit'=>'login',
 	'login_seccode'=>'验证码',
 	'login_incorrect' => '<em>登录失败!</em><br />用户名无效，或密码错误。',
 	'login_founder_incorrect' => 'UCenter创始人密码错误',
@@ -32,7 +32,7 @@ $languages = array(
 	'login_seccode_tips' => '如果您无法识别验证码，请点图片更换',
 	'login_secques' => '安全提问',
 	'login_remove_secques' => '清除安全提问',
-	'login_getpw' => '找回密码',
+	'login_getpw' => 'Retrieve password',
 
 	'menu_index'=>'首页',
 	'menu_basic_setting'=>'基本设置',
