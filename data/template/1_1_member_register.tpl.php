@@ -16,7 +16,7 @@ var pwlength = <?php if($_G['setting']['pwlength']) { ?><?php echo $_G['setting'
 <div class="alert_right">
 <p id="succeedmessage"></p>
 <p id="succeedlocation" class="alert_btnleft"></p>
-<p class="alert_btnleft"><a id="succeedmessage_href">如果您的浏览器没有自动跳转，请点击此链接</a></p>
+<p class="alert_btnleft"><a id="succeedmessage_href">If your browser does not jump automatically, please click this link</a></p>
 </div>
 </div>
 </div>
@@ -111,7 +111,7 @@ showDialog(msg, 'notice');
 <tr>
 <th><span class="rq">*</span><label for="<?php echo $this->setting['reginput']['username'];?>">用户名:</label></th>
 <td><input type="text" id="<?php echo $this->setting['reginput']['username'];?>" name="" class="px" tabindex="1" value="<?php echo dhtmlspecialchars($_GET['defaultusername']); ?>" autocomplete="off" size="25" maxlength="15" required /></td>
-<td class="tipcol"><i id="tip_<?php echo $this->setting['reginput']['username'];?>" class="p_tip">用户名由 3 到 15 个字符组成</i><kbd id="chk_<?php echo $this->setting['reginput']['username'];?>" class="p_chk"></kbd></td>
+<td class="tipcol"><i id="tip_<?php echo $this->setting['reginput']['username'];?>" class="p_tip">Username are made up of 3 to 15 characters</i><kbd id="chk_<?php echo $this->setting['reginput']['username'];?>" class="p_chk"></kbd></td>
 </tr>
 </table>
 </div>
@@ -119,9 +119,9 @@ showDialog(msg, 'notice');
 <div class="rfm">
 <table>
 <tr>
-<th><span class="rq">*</span><label for="<?php echo $this->setting['reginput']['password'];?>">密码:</label></th>
+<th><span class="rq">*</span><label for="<?php echo $this->setting['reginput']['password'];?>">password:</label></th>
 <td><input type="password" id="<?php echo $this->setting['reginput']['password'];?>" name="" size="25" tabindex="1" class="px" required /></td>
-<td class="tipcol"><i id="tip_<?php echo $this->setting['reginput']['password'];?>" class="p_tip">请填写密码<?php if($_G['setting']['pwlength']) { ?>, 最小长度为 <?php echo $_G['setting']['pwlength'];?> 个字符<?php } ?></i><kbd id="chk_<?php echo $this->setting['reginput']['password'];?>" class="p_chk"></kbd></td>
+<td class="tipcol"><i id="tip_<?php echo $this->setting['reginput']['password'];?>" class="p_tip">Please fill in the password<?php if($_G['setting']['pwlength']) { ?>, 最小长度为 <?php echo $_G['setting']['pwlength'];?> 个字符<?php } ?></i><kbd id="chk_<?php echo $this->setting['reginput']['password'];?>" class="p_chk"></kbd></td>
 </tr>
 </table>
 </div>
@@ -129,9 +129,9 @@ showDialog(msg, 'notice');
 <div class="rfm">
 <table>
 <tr>
-<th><span class="rq">*</span><label for="<?php echo $this->setting['reginput']['password2'];?>">确认密码:</label></th>
+<th><span class="rq">*</span><label for="<?php echo $this->setting['reginput']['password2'];?>">password confirm:</label></th>
 <td><input type="password" id="<?php echo $this->setting['reginput']['password2'];?>" name="" size="25" tabindex="1" value="" class="px" required /></td>
-<td class="tipcol"><i id="tip_<?php echo $this->setting['reginput']['password2'];?>" class="p_tip">请再次输入密码</i><kbd id="chk_<?php echo $this->setting['reginput']['password2'];?>" class="p_chk"></kbd></td>
+<td class="tipcol"><i id="tip_<?php echo $this->setting['reginput']['password2'];?>" class="p_tip">Please enter your password again</i><kbd id="chk_<?php echo $this->setting['reginput']['password2'];?>" class="p_chk"></kbd></td>
 </tr>
 </table>
 </div>
@@ -149,7 +149,7 @@ showDialog(msg, 'notice');
 <div id="activation_user" class="rfm">
 <table>
 <tr>
-<th>用户名:</th>
+<th>username:</th>
 <td><strong><?php echo $username;?></strong></td>
 </tr>
 </table>
@@ -214,7 +214,7 @@ $sectpl = str_replace("'", "\'", $sectpl);?><?php if($secqaacheck) { ?>
 <?php if($_GET['action'] != 'activation') { ?><em>&nbsp;</em><?php } ?>
 <button class="pn pnc" id="registerformsubmit" type="submit" name="regsubmit" value="true" tabindex="1"><strong><?php if($_GET['action'] == 'activation') { ?>激活<?php } else { ?>提交<?php } ?></strong></button>
 <?php if($bbrules) { ?>
-<input type="checkbox" class="pc" name="agreebbrule" value="<?php echo $bbrulehash;?>" id="agreebbrule" checked="checked" /> <label for="agreebbrule">同意<a href="javascript:;" onclick="showBBRule()">网站服务条款</a></label>
+<input type="checkbox" class="pc" name="agreebbrule" value="<?php echo $bbrulehash;?>" id="agreebbrule" checked="checked" /> <label for="agreebbrule">agree<a href="javascript:;" onclick="showBBRule()">Terms of Service</a></label>
 <?php } ?>
 </span>
 </td>
@@ -248,8 +248,8 @@ $sectpl = str_replace("'", "\'", $sectpl);?><?php if($secqaacheck) { ?>
 <div id="layer_bbrule" style="display: none">
 <div class="c" style="width:700px;height:350px;overflow:auto"><?php echo $bbrulestxt;?></div>
 <p class="fsb pns cl hm">
-<button class="pn pnc" onclick="$('agreebbrule').checked = true;hideMenu('fwin_dialog', 'dialog');<?php if($this->setting['sitemessage']['register'] && ($bbrules && $bbrulesforce)) { ?>showRegprompt();<?php } ?>"><span>同意</span></button>
-<button class="pn" onclick="location.href='<?php echo $_G['siteurl'];?>'"><span>不同意</span></button>
+<button class="pn pnc" onclick="$('agreebbrule').checked = true;hideMenu('fwin_dialog', 'dialog');<?php if($this->setting['sitemessage']['register'] && ($bbrules && $bbrulesforce)) { ?>showRegprompt();<?php } ?>"><span>agree</span></button>
+<button class="pn" onclick="location.href='<?php echo $_G['siteurl'];?>'"><span>Don't agree </span></button>
 </p>
 </div>
 
