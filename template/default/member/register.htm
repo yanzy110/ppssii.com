@@ -35,7 +35,7 @@
 			<!--{/if}-->
 		</span>
 		<h3 id="layer_reginfo_t" class="xs2">
-			<!--{if $_GET[action] != 'activation'}-->$this->setting['reglinkname']<!--{else}-->{lang index_activation}<!--{/if}-->
+			<!--{if $_GET[action] != 'activation'}--><!--{else}-->{lang index_activation}<!--{/if}-->
 		</h3>
 	</div>
 
@@ -121,7 +121,7 @@
 							<div class="rfm">
 								<table>
 									<tr>
-										<th><span class="rq">*</span><label for="{$this->setting['reginput']['username']}">{lang username}:</label></th>
+										<th><span class="rq">*</span><label for="{$this->setting['reginput']['username']}">username:</label></th>
 										<td><input type="text" id="{$this->setting['reginput']['username']}" name="" class="px" tabindex="1" value="{echo dhtmlspecialchars($_GET[defaultusername])}" autocomplete="off" size="25" maxlength="15" required /></td>
 										<td class="tipcol"><i id="tip_{$this->setting['reginput']['username']}" class="p_tip">{lang register_username_tips}</i><kbd id="chk_{$this->setting['reginput']['username']}" class="p_chk"></kbd></td>
 									</tr>
