@@ -15,15 +15,6 @@
 	<div class="mn" id="main_message">
 		<div class="bm">
 			<div class="bm_h bbs">
-				<span class="y">
-					<!--{hook/logging_side_top}-->
-					<a href="member.php?mod={$_G[setting][regname]}" class="xi2">{lang login_guest}</a>
-				</span>
-				<!--{if !$secchecklogin2}-->
-					<h3 class="xs2">{lang login}</h3>
-				<!--{else}-->
-					<h3 class="xs2">{lang login_seccheck2}</h3>
-				<!--{/if}-->
 			</div>
 		<div>
 <!--{/if}-->
@@ -71,7 +62,7 @@
 								<!--{/if}-->
 							</th>
 							<td><input type="text" name="username" id="username_$loginhash" autocomplete="off" size="30" class="px p_fre" tabindex="1" value="$username" /></td>
-							<td class="tipcol"><a href="member.php?mod={$_G[setting][regname]}">$_G['setting']['reglinkname']</a></td>
+							<td class="tipcol"></td>
 						</tr>
 					</table>
 				</div>
@@ -87,23 +78,7 @@
 				<!--{/if}-->
 
 				<!--{if empty($_GET['auth']) || $questionexist}-->
-				<div class="rfm">
-					<table>
-						<tr>
-							<th>{lang security_q}:</th>
-							<td><select id="loginquestionid_$loginhash" width="213" name="questionid"{if !$questionexist} onchange="if($('loginquestionid_$loginhash').value > 0) {$('loginanswer_row_$loginhash').style.display='';} else {$('loginanswer_row_$loginhash').style.display='none';}"<!--{/if}-->>
-								<option value="0"><!--{if $questionexist}-->{lang security_question_0}<!--{else}-->{lang security_question}<!--{/if}--></option>
-								<option value="1">{lang security_question_1}</option>
-								<option value="2">{lang security_question_2}</option>
-								<option value="3">{lang security_question_3}</option>
-								<option value="4">{lang security_question_4}</option>
-								<option value="5">{lang security_question_5}</option>
-								<option value="6">{lang security_question_6}</option>
-								<option value="7">{lang security_question_7}</option>
-							</select></td>
-						</tr>
-					</table>
-				</div>
+
 				<div class="rfm" id="loginanswer_row_$loginhash" {if !$questionexist} style="display:none"{/if}>
 					<table>
 						<tr>
